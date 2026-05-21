@@ -1,0 +1,105 @@
+.numbersSection {
+  padding: 5rem 0;
+}
+
+.numbersSection__container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.numbersSection__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.numbersSection__card {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  min-height: 20rem;
+  padding: 1.75rem;
+  border: var(--pixel-border);
+  box-shadow: var(--shadow-pixel);
+  background: var(--color-surface-strong);
+  overflow: hidden;
+}
+
+.numbersSection__card::after {
+  content: "";
+  position: absolute;
+  inset: auto -15% -35% auto;
+  width: 12rem;
+  height: 12rem;
+  background: radial-gradient(circle, rgba(109, 211, 160, 0.22), transparent 70%);
+  pointer-events: none;
+}
+
+.numbersSection__cardIndex,
+.numbersSection__cardHint {
+  color: var(--color-text-soft);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.numbersSection__cardTitle {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3vw, 3rem);
+  letter-spacing: 0.04em;
+  line-height: 0.9;
+}
+
+.numbersSection__cardMetric {
+  font-family: var(--font-heading);
+  font-size: clamp(4rem, 9vw, 6.5rem);
+  line-height: 0.82;
+  letter-spacing: 0.04em;
+  color: var(--color-accent);
+}
+
+.numbersSection__cardDescription {
+  margin: 0;
+  max-width: 34rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.numbersSection__cardFooter {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.numbersSection__cardBadge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.35rem 0.75rem;
+  border: 2px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 900px) {
+  .numbersSection__grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 720px) {
+  .numbersSection {
+    padding: 4rem 0;
+  }
+  .numbersSection__container {
+    padding: 0 1rem;
+  }
+  .numbersSection__cardFooter {
+    flex-direction: column;
+    align-items: start;
+  }
+}/*# sourceMappingURL=NumbersSection.module.css.map */

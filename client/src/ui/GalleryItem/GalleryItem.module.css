@@ -1,0 +1,127 @@
+.galleryItem {
+  position: relative;
+  min-height: 23rem;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  background: #0b0e0d;
+  cursor: pointer;
+  grid-column: span 4;
+}
+
+.galleryItem--featured {
+  grid-column: span 8;
+}
+
+.galleryItem__image,
+.galleryItem__overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.galleryItem__image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.galleryItem:hover .galleryItem__image {
+  transform: scale(1.06);
+}
+
+.galleryItem__overlay {
+  background: linear-gradient(180deg, rgba(4, 5, 5, 0.08) 0%, rgba(4, 5, 5, 0.8) 78%);
+}
+
+.galleryItem__content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+
+.galleryItem__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.galleryItem__meta span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.galleryItem__footer {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.galleryItem__title {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.4vw, 2.2rem);
+}
+
+.galleryItem__location {
+  margin: 0.5rem 0 0;
+  max-width: 30rem;
+  color: var(--color-text-muted);
+}
+
+.galleryItem__icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 1024px) {
+  .galleryItem,
+  .galleryItem--featured {
+    grid-column: span 1;
+  }
+}
+@media (max-width: 720px) {
+  .galleryItem {
+    min-height: 20rem;
+  }
+  .galleryItem__footer {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+.nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.nav button {
+  pointer-events: auto;
+}/*# sourceMappingURL=GalleryItem.module.css.map */

@@ -1,0 +1,131 @@
+@charset "UTF-8";
+.storeIntro {
+  padding-block: 3rem 2rem;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .storeIntro {
+    padding-block: 2rem 1.5rem;
+  }
+}
+
+.storeIntro__container {
+  max-width: var(--container-width, 1200px);
+  margin: 0 auto;
+  padding-inline: var(--space-5, 1.5rem);
+}
+@media (max-width: 768px) {
+  .storeIntro__container {
+    padding-inline: var(--space-4, 1rem);
+  }
+}
+
+.storeIntro__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5, 1.5rem);
+}
+@media (max-width: 960px) {
+  .storeIntro__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6, 2rem);
+  }
+}
+
+.storeIntro__column {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Центрируем кнопку под карточкой */
+  gap: var(--space-3, 1rem);
+}
+
+.storeIntro__directionCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Чтобы контент распределялся равномерно */
+  padding: var(--space-5, 1.5rem);
+  width: 100%;
+  height: 100%; /* Растягиваем на всю высоту ячейки грида */
+  border: var(--pixel-border);
+  background: var(--color-surface-strong);
+  box-shadow: var(--shadow-pixel);
+  border-radius: var(--radius-sm, 4px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.storeIntro__directionCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 768px) {
+  .storeIntro__directionCard {
+    padding: var(--space-4, 1.25rem);
+  }
+}
+
+.storeIntro__directionTitle {
+  margin: 0 0 var(--space-2, 0.75rem);
+  font-family: var(--font-heading, "VT323", monospace);
+  font-size: clamp(1.5rem, 4vw, 1.8rem);
+  color: var(--color-accent);
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+}
+
+.storeIntro__directionDesc {
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  font-size: var(--text-base, 0.95rem);
+  font-family: var(--font-body, "JetBrains Mono", monospace);
+}
+
+.storeIntro__actionBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.75rem 1.5rem;
+  border: var(--pixel-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-body, "JetBrains Mono", monospace);
+  font-size: var(--text-sm, 0.9rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.storeIntro__actionBtn:hover {
+  background: var(--color-accent);
+  color: var(--color-text-inverse);
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--color-accent-dim);
+}
+.storeIntro__actionBtn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.storeIntro__desktopBtn {
+  width: -moz-fit-content;
+  width: fit-content;
+  min-width: 200px;
+}
+@media (max-width: 960px) {
+  .storeIntro__desktopBtn {
+    display: none; /* Скрываем на мобильных */
+  }
+}
+
+.storeIntro__mobileBtn {
+  width: 100%;
+  margin-top: var(--space-3, 1rem);
+}
+@media (min-width: 961px) {
+  .storeIntro__mobileBtn {
+    display: none; /* Скрываем на десктопе */
+  }
+}/*# sourceMappingURL=StoreIntro.module.css.map */

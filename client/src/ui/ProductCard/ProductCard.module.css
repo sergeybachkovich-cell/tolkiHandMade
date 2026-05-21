@@ -1,0 +1,176 @@
+@charset "UTF-8";
+.productCard {
+  position: relative;
+  min-height: 24rem;
+  grid-column: span 4;
+  overflow: hidden;
+  cursor: pointer;
+  border: var(--pixel-border);
+  background: var(--color-bg-secondary);
+  box-shadow: var(--shadow-pixel);
+}
+
+.productCard--featured {
+  grid-column: span 8;
+}
+
+.productCard__image,
+.productCard__overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.productCard__nav {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.75rem;
+  pointer-events: none;
+}
+
+.productCard__button {
+  pointer-events: auto;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(0, 0, 0, 0.35);
+  color: white;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease, opacity 0.15s ease;
+}
+
+.productCard__button:hover {
+  background: rgba(0, 0, 0, 0.55);
+  transform: scale(1.04);
+}
+
+.productCard__image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.productCard:hover .productCard__image {
+  transform: scale(1.04);
+}
+
+.productCard__overlay {
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.18) 32%, rgba(0, 0, 0, 0.82) 100%), linear-gradient(90deg, rgba(94, 255, 143, 0.08), transparent 36%);
+}
+
+.productCard__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.1rem;
+}
+
+.productCard__category,
+.productCard__action {
+  display: inline-flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-items: center;
+  min-height: 2.25rem;
+  padding: 0.45rem 0.75rem;
+  border: 2px solid var(--color-border-strong);
+  background: rgba(0, 0, 0, 0.32);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.74rem;
+}
+
+.productCard__footer {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.productCard__copy {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.productCard__title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 0.88;
+  letter-spacing: 0.04em;
+}
+
+.productCard__meta {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+}
+
+/* 1. Контейнер для кнопок */
+.productCard__nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  /* ВАЖНО: z-index должен быть больше, чем у .productCard__content */
+  z-index: 10;
+  /* Чтобы сам контейнер не перехватывал клики, которые должны идти в карточку */
+  pointer-events: none;
+}
+
+/* 2. Сами кнопки */
+.productCard__button {
+  /* Возвращаем кнопкам кликабельность */
+  pointer-events: auto;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--color-border-strong);
+  color: var(--color-text-bright);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(4px); /* Эффект стекла, будет стильно */
+}
+.productCard__button:hover {
+  background: var(--color-accent, #00ff9d);
+  color: #000;
+}
+
+@media (max-width: 1024px) {
+  .productCard,
+  .productCard--featured {
+    grid-column: span 1;
+  }
+}
+@media (max-width: 720px) {
+  .productCard {
+    min-height: 21rem;
+  }
+  .productCard__footer {
+    flex-direction: column;
+    align-items: start;
+  }
+}/*# sourceMappingURL=ProductCard.module.css.map */

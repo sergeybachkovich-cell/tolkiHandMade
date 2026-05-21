@@ -1,0 +1,44 @@
+.voxelBackground {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.voxelBackground__fog {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, color-mix(in srgb, var(--color-accent) 20%, transparent), transparent 28%), radial-gradient(circle at 80% 28%, rgba(255, 255, 255, 0.06), transparent 24%), radial-gradient(circle at 60% 82%, color-mix(in srgb, var(--color-accent) 14%, transparent), transparent 24%);
+  opacity: 0.75;
+}
+
+.voxelBackground__shape {
+  position: absolute;
+  border: 3px solid var(--color-border-strong);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--color-accent) 45%, transparent), transparent 58%), linear-gradient(315deg, rgba(255, 255, 255, 0.08), transparent 62%), var(--color-surface);
+  box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.08), 0 24px 40px rgba(0, 0, 0, 0.2);
+  animation: voxelFloat 9s ease-in-out infinite;
+}
+
+.voxelBackground__shape:nth-child(2n) {
+  clip-path: polygon(25% 0%, 100% 0%, 100% 75%, 75% 100%, 0% 100%, 0% 25%);
+}
+
+.voxelBackground__shape:nth-child(3n) {
+  clip-path: polygon(50% 0%, 100% 30%, 100% 75%, 50% 100%, 0% 75%, 0% 30%);
+}
+
+@keyframes voxelFloat {
+  0%, 100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -18px;
+  }
+}
+@media (max-width: 900px) {
+  .voxelBackground__shape:nth-child(n+5) {
+    display: none;
+  }
+}/*# sourceMappingURL=VoxelBackground.module.css.map */

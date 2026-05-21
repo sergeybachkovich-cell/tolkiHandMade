@@ -1,0 +1,12 @@
+.app {
+  position: relative;
+  min-height: 100vh;
+  background: transparent;
+  color: var(--color-text);
+}
+
+.app__main {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}/*# sourceMappingURL=App.module.css.map */

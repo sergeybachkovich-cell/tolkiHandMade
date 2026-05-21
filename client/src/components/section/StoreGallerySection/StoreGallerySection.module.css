@@ -33,7 +33,8 @@
 .storeGallery__image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .storeGallery__overlay {
@@ -68,31 +69,16 @@
   color: var(--color-text-muted);
 }
 
-// карта магазина
-.storeGallery__storeMap {
-  width: 600px;      /* или 100% / max-width по вкусу */
-  height: 400px;
-  margin: 24px auto; /* центр по горизонтали */
-}
-.storeGallery__storeMap iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-
 @media (max-width: 900px) {
   .storeGallery__grid {
     grid-template-columns: 1fr;
   }
 }
-
 @media (max-width: 720px) {
   .storeGallery {
     padding: 4rem 0;
   }
-
   .storeGallery__container {
     padding: 0 1rem;
   }
-}
+}/*# sourceMappingURL=StoreGallerySection.module.css.map */

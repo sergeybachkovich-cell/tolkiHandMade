@@ -4,6 +4,8 @@ import { City } from '../../../types';
 import { storePhotos } from '../../../utils/storeData';
 import { siteContent } from '../../../config/contentConfig';
 import SectionHeading from '../../../ui/SectionHeading/SectionHeading';
+import { MapIframe } from '@/ui/MapIframe/MapIframe'; // карта магазина iframe
+
 import styles from './StoreGallerySection.module.scss';
 
 export default function StoreGallerySection({ currentCity }: { currentCity: City }) {
@@ -48,6 +50,10 @@ export default function StoreGallerySection({ currentCity }: { currentCity: City
             </motion.article>
           ))}
           
+        </div>
+
+        <div className={styles.storeGallery__storeMap}>
+          <MapIframe />
         </div>
         
       </div>

@@ -1,0 +1,45 @@
+.citySwitcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border: var(--pixel-border);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-pixel);
+}
+
+.citySwitcher--compact {
+  width: 100%;
+}
+
+.citySwitcher__button {
+  border: 0;
+  min-height: 2.75rem;
+  padding: 0.75rem 1.25rem;
+  border: 0;
+  background: transparent;
+  color: var(--color-text-soft);
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.citySwitcher__button:hover {
+  color: var(--color-text);
+}
+
+.citySwitcher__button--active {
+  background: var(--color-accent);
+  color: #071008;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+  .citySwitcher,
+  .citySwitcher--compact {
+    width: 100%;
+  }
+  .citySwitcher__button {
+    flex: 1 1 50%;
+    padding-inline: 1rem;
+  }
+}/*# sourceMappingURL=CitySwitcher.module.css.map */
