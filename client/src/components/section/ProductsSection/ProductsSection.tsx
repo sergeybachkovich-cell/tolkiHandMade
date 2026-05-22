@@ -85,21 +85,7 @@ const commitPageInput = () => {
           <CitySwitcher currentCity={currentCity} onCityChange={onCityChange} />
         </div>
 
-        <div className={styles.productsSection__grid}>
-          <AnimatePresence mode="popLayout">
-            {paginatedProducts.map((product, index) => (
-              <ProductCard
-                product={product}
-                index={index}
-                isDimmed={hoveredId !== null && hoveredId !== product.id}
-                onHover={setHoveredId}
-                onClick={() => onProductClick(product)}
-                key={product.id}
-                imageIdx={0} // Пока показываем первое фото. Карусель внутри карточки можно добавить позже.
-              />
-            ))}
-          </AnimatePresence>
-        </div>
+        
 
         {/* Пагинация: появляется только если товаров больше, чем лимит */}
         {totalPages > 1 && (
